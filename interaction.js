@@ -403,6 +403,10 @@ const interaction = {
 				{
 					label: '在浏览器中打开', 
 					action: () => vscode.env.openExternal(vscode.Uri.parse(`https://music.163.com/#/song?id=${id}`)) && quickPick.hide()
+				},
+				{
+					label: '打开歌曲链接', 
+					action: () => vscode.env.openExternal(vscode.Uri.parse(`${song.url}`)) && quickPick.hide()
 				}
 			].filter(item => item), `正在播放: ${data.ar.map(artist => artist.name).join(' / ')} - ${data.name}`)
 		})
