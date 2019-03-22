@@ -360,7 +360,7 @@ const interaction = {
 		})
 	},
 	more: () => {
-		let id = controller.list().find(song => song.play).id
+		let song = controller.list().find(song => song.play),id = song.id;
 		api.song.detail(id).then(data => data.songs[0]).then(data => {
 			fillQuickPick([
 				{
